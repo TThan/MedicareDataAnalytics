@@ -30,3 +30,5 @@ impala> select sum(cast(e.enrolled as int)) as totalenrolled, c.plantype, e.stat
 
 # Insight 10: How are the Medicare Advantage Plan enrollees distributed among the states?
 impala> select sum(cast(e.enrolled as int)) as totalenrolled, e.state from enrollment e , contract c where c.planid = e.planid and e.contractid=c.contractid group by e.state order by totalenrolled desc;
+
+-----------------------------
